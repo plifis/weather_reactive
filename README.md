@@ -1,3 +1,2 @@
-# weather_reactive
-### Проект Прогноз погоды
+### Проект "Прогноз погоды" - RESTfuk-сервис
 #### Технологии: Java, Gradle, WebFlux
