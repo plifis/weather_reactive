@@ -4,7 +4,7 @@ jdk:
 sudo: false
 env:
 install: true
-- ./gradlew build --scan -safter_success:
+  - ./gradlew build --scan -s
 - bash <(curl -s https://codecov.io/bash)
 notifications:
   email:
