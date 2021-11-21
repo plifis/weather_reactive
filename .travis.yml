@@ -4,16 +4,15 @@ jdk:
 sudo: false
 env:
 install: true
-# script: mvn clean package -DskipTests=true
-after_success:
+- ./gradlew build --scan -safter_success:
 - bash <(curl -s https://codecov.io/bash)
 notifications:
   email:
     recipients: "-nikich85@inbox.ru"
     on_success: never
     on_failure: always
-deploy:
-  provider: heroku
-  api_key:
-    secure: DqPN6Gt/uLXTpU+3P7YlQ0OXtcv59Uq2Q/9+fuCMJPZJphXzbib7PtJJ3Lu0M7cTT8bxjp0niRMVNM/Yav9b2jozNjOxWP9LVA3hXiuciZavqr/cNDhi4v8/nFBsbtd8akkFZQ1eRQQaNzykhelf9AwkgaF5Ucg84IuRTuioo7UuHBFStudqMPskgYQSTAMNcACfgVQ0WpxosDEWBY5Mjkgi6l626KTBPmxz4NjJ+FczANqaSpBvTjEPLbrOQsfm3RmiFtaB2n5l74RK6y0HckKGQX6Ojkr3SGBW9csLz4XBC5dzf1utjlSzfpW6TZAljJPf3aTjMdzjyMs9vhESrJvQxXx6guthwFTm6pR+hLQovtrhB5ti61t0ZDIOdtjkWkipUB7xJ7PGtjmlQBP8WNyKULW1q+YhNrPdU+RSzFWNnB6VVJzuqKC8r7KHh2rb9Tl2s1yiD32LeSIiNtbCtJie11jPdenH5jCy16d9w2Ah79qxfONg3bcGw6Kq/Kg4G+tydUnMMJFlgioAYBDK4digokcmqmwtxp8g0R4dLWr9OvdOrwOeNzsSYBszCKzEajMH3yaPK6OOySNO46mR2xi4IRZzwrz/QyZQz40IHo2HSYqOEO1OJjgHVaPN63CisA9SnJANWVSsZcqUBS3ExT3bB841olk3UTwnO8RZpZE=
-  app: evening-hamlet-64703
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: DqPN6Gt/uLXTpU+3P7YlQ0OXtcv59Uq2Q/9+fuCMJPZJphXzbib7PtJJ3Lu0M7cTT8bxjp0niRMVNM/Yav9b2jozNjOxWP9LVA3hXiuciZavqr/cNDhi4v8/nFBsbtd8akkFZQ1eRQQaNzykhelf9AwkgaF5Ucg84IuRTuioo7UuHBFStudqMPskgYQSTAMNcACfgVQ0WpxosDEWBY5Mjkgi6l626KTBPmxz4NjJ+FczANqaSpBvTjEPLbrOQsfm3RmiFtaB2n5l74RK6y0HckKGQX6Ojkr3SGBW9csLz4XBC5dzf1utjlSzfpW6TZAljJPf3aTjMdzjyMs9vhESrJvQxXx6guthwFTm6pR+hLQovtrhB5ti61t0ZDIOdtjkWkipUB7xJ7PGtjmlQBP8WNyKULW1q+YhNrPdU+RSzFWNnB6VVJzuqKC8r7KHh2rb9Tl2s1yiD32LeSIiNtbCtJie11jPdenH5jCy16d9w2Ah79qxfONg3bcGw6Kq/Kg4G+tydUnMMJFlgioAYBDK4digokcmqmwtxp8g0R4dLWr9OvdOrwOeNzsSYBszCKzEajMH3yaPK6OOySNO46mR2xi4IRZzwrz/QyZQz40IHo2HSYqOEO1OJjgHVaPN63CisA9SnJANWVSsZcqUBS3ExT3bB841olk3UTwnO8RZpZE=
+#   app: evening-hamlet-64703
