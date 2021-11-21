@@ -6,6 +6,8 @@ env:
 install: true
   - ./gradlew build --scan -s
 - bash <(curl -s https://codecov.io/bash)
+script:
+  - chmod +x ./gradlew build connectedCheck
 notifications:
   email:
     recipients: "-nikich85@inbox.ru"
