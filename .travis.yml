@@ -3,7 +3,8 @@ jdk:
 - openjdk14
 sudo: false
 script:
-  - ./gradlew check
+  - gradle check
+
 env:
 install: true
 - bash <(curl -s https://codecov.io/bash)
